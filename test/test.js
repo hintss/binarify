@@ -6,6 +6,10 @@ test('Outputs an input string', t => {
   t.true(Buffer.from('loltest').equals(Binarify('loltest')));
 });
 
+test('Lone backslash doesn\'t break anything', t => {
+  t.true(Buffer.from('  ').equals(Binarify(' \\ ')));
+});
+
 test('\\a', t => {
   t.true(Buffer.from([0x07]).equals(Binarify('\\a')));
 });

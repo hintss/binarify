@@ -68,6 +68,9 @@ module.exports = function(input) {
         } else {
           throw new Error('Invalid hex escape');
         }
+      } else {
+        count--;
+        i--;
       }
     } else {
       output[count] = input.charCodeAt(i);
