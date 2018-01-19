@@ -1,0 +1,29 @@
+{
+  "name": "binarify",
+  "version": "1.0.0",
+  "description": "Converts backslash-escaped strings into a Buffer",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hintss/node-binarify.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "npx ava"
+  },
+  "keywords": [
+    "backslash",
+    "unescape",
+    "escape"
+  ],
+  "author": {
+    "name": "hintss",
+    "url": "https://hintss.pw/"
+  },
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "ava": "^0.24.0"
+  }
+}
