@@ -14,6 +14,6 @@ test('octal escapes', t => {
 
 test('All octal values from 0 to 255', t => {
   for (let i = 0; i < 256; i++) {
-    t.true(Buffer.from([i]).equals(Binarify('\\' + i.toString(8))));
+    t.true(Buffer.from([0x20, i, 0x20]).equals(Binarify(` \\${i.toString(8)} `)));
   }
 });

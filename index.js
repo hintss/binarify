@@ -54,7 +54,7 @@ module.exports = function(input) {
         }
 
         output[count] = parseInt(oct, 8);
-      } else if (input[i] == 'x') {
+      } else if (input[i] == 'x') { // node behavior is to always expect 2, not sure about other langs
         if (input.length < i + 3) {
           throw new Error('Invalid hex escape');
         }
