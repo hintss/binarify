@@ -1,3 +1,14 @@
+const escapes = {
+  'a': 0x07,
+  'b': 0x08,
+  'e': 0x1B,
+  'f': 0x0C,
+  'n': 0x0A,
+  'r': 0x0D,
+  't': 0x09,
+  'v': 0x0B
+};
+
 module.exports = function(input) {
   let output = Buffer.allocUnsafe(input.length);
   let count = 0;
@@ -6,30 +17,8 @@ module.exports = function(input) {
     if (input[i] == '\\') {
       i++;
 
-      if (input[i] == 'a') {
-        output[count] = 0x07;
-      } else if (input[i] == 'b') {
-        output[count] = 0x08;
-      } else if (input[i] == 'e') {
-        output[count] = 0x1B;
-      } else if (input[i] == 'f') {
-        output[count] = 0x0C;
-      } else if (input[i] == 'n') {
-        output[count] = 0x0A;
-      } else if (input[i] == 'r') {
-        output[count] = 0x0D;
-      } else if (input[i] == 't') {
-        output[count] = 0x09;
-      } else if (input[i] == 'v') {
-        output[count] = 0x0B;
-      } else if (input[i] == '\\') {
-        output[count] = 0x5C;
-      } else if (input[i] == '\'') {
-        output[count] = 0x27;
-      } else if (input[i] == '\"') {
-        output[count] = 0x22;
-      } else if (input[i] == '\?') {
-        output[count] = 0x3F;
+      if (escapes.hasOwnProperty(input[i])) {
+        output[count] = escapes[input[i]];
       } else if (isOctal(input[i])) {
         let length = 3;
 
