@@ -12,7 +12,7 @@
     "url": "https://hintss.pw/"
   },
   "license": "BSD-3-Clause",
-  "repository": "github:hintss/node-binarify",
+  "repository": "github:hintss/binarify",
   "bugs": "https://github.com/hintss/node-binarify/issues",
   "engines": {
     "node": ">=5.10.0"
